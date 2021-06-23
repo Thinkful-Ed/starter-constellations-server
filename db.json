@@ -8,13 +8,6 @@
       "quadrant": "SQ1"
     },
     {
-      "id": "zb8QvVt",
-      "name": "Crater",
-      "meaning": "Cup",
-      "starsWithPlanets": 10,
-      "quadrant": "SQ2"
-    },
-    {
       "id": "32TN5F8",
       "name": "Draco",
       "meaning": "Dragon",
@@ -97,6 +90,13 @@
       "meaning": "Sails",
       "starsWithPlanets": 7,
       "quadrant": "SQ2"
+    },
+    {
+      "name": "Columba",
+      "meaning": "Dove",
+      "starsWithPlanets": 3,
+      "quadrant": "SQ1",
+      "id": "nP4Xcpr"
     }
   ]
 }
