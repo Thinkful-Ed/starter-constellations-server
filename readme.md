@@ -4,6 +4,15 @@ This server is intended to be run for some checkpoints in the Thinkful curriculu
 
 ## Installation Instructions
 
+First, verify that you have Node.js installed on your machine. Run the following two commands, which should successfully return version numbers.
+
+```
+node -v
+npm -v
+```
+
+If those commands don't return version numbers, reference [npm's documetation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on how to install Node.js on your machine.
+
 1. Fork this repository by clicking the Fork button at the top right of the page.
 2. Clone this repository.
 3. `cd` into the newly created directory.
