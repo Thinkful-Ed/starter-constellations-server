@@ -19,7 +19,7 @@ If those commands don't return version numbers, reference [npm's documetation](h
 4. Run `npm install`.
 5. Run `npm start`.
 
-Running `npm start` will spin up a server on port 5000.
+Running `npm start` will spin up a server on port 5001.
 
 ## Description
 
@@ -34,7 +34,7 @@ Making a `GET` request to `/constellations` will return an array of objects, whe
 **Example Request**
 
 ```
-GET http://localhost:5000/constellations
+GET http://localhost:5001/constellations
 ```
 
 **Example Response**
@@ -67,7 +67,7 @@ If the constellation cannot be found by the ID, the server will return an error 
 **Example Request**
 
 ```
-GET http://localhost:5000/constellations/UEUrlfX
+GET http://localhost:5001/constellations/UEUrlfX
 ```
 
 **Example Response**
@@ -91,7 +91,7 @@ There is no specific validation that is a part of the server, so you can create 
 **Example Request**
 
 ```
-POST http://localhost:5000/constellations
+POST http://localhost:5001/constellations
 {
   "name": "Camelopardalis",
   "meaning": "Giraffe",
@@ -123,7 +123,7 @@ If the constellation cannot be found by the ID, the server will return an error 
 **Example Request**
 
 ```
-PUT http://localhost:5000/constellations/IVU9de
+PUT http://localhost:5001/constellations/IVU9de
 {
   "name": "Camelopardalis",
   "meaning": "Giraffe",
@@ -153,7 +153,7 @@ If the constellation cannot be found by the ID, the server will return an error 
 **Example Request**
 
 ```
-DELETE http://localhost:5000/constellations/IVU9de
+DELETE http://localhost:5001/constellations/IVU9de
 ```
 
 **Example Response**
