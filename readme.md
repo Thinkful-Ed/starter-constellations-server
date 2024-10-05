@@ -1,43 +1,73 @@
-# Starter Code: Constellations Server
+# Starter: Constellations Server
 
-This server is intended to be run for some checkpoints in the Thinkful curriculum. If you have trouble getting the server to run, reach out to your mentor.
+This repository contains a RESTful API server designed to manage and modify constellation data. It is part of educational exercises used in Thinkful's Flex and Immersive Web Development programs. The server enables CRUD operations (Create, Read, Update, Delete) for constellation records and can be used to practice building and interacting with APIs.
 
-## Installation Instructions
+## Project Overview
 
-First, verify that you have Node.js installed on your machine. Run the following two commands, which should successfully return version numbers.
+The Constellations Server provides an API that allows users to interact with a dataset of constellations, performing operations such as fetching a list of constellations, creating new constellations, updating existing ones, and deleting records. This project serves as a hands-on learning tool for working with APIs in a Node.js environment.
 
-```
+## Prerequisites
+
+Before starting, ensure that you have the following installed:
+
+- **Node.js** (version 12.x or later)
+- **npm** (version 6.x or later)
+
+To verify the installation of Node.js and npm, run the following commands in your terminal:
+
+```bash
 node -v
 npm -v
 ```
 
-If those commands don't return version numbers, reference [npm's documetation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on how to install Node.js on your machine.
+If the commands do not return version numbers, please refer to [Node.js installation guide](https://nodejs.org/en/download/) for assistance.
 
-1. Fork this repository by clicking the Fork button at the top right of the page.
-2. Clone this repository.
-3. `cd` into the newly created directory.
-4. Run `npm install`.
-5. Run `npm start`.
+## Installation Instructions
 
-Running `npm start` will spin up a server on port 5001.
+To get started with the project, follow these steps:
 
-## Description
+1. **Fork this repository** by clicking the "Fork" button at the top right of this page.
+2. **Clone the repository** to your local machine:
 
-The Constellations Server provides a RESTful API through which you can request and modify information about constellations.
+   ```bash
+   git clone https://github.com/Thinkful-Ed/starter-constellations-server.git
+   ```
 
-In general, you should only need to access the routes described below.
+3. Navigate into the project directory:
+
+   ```bash
+   cd starter-constellations-server
+   ```
+
+4. Install the project dependencies:
+
+   ```bash
+   npm install
+   ```
+
+5. Start the server:
+
+   ```bash
+   npm start
+   ```
+
+By default, the server will run on [http://localhost:5001](http://localhost:5001).
+
+## API Usage
+
+The Constellations Server exposes several API endpoints for interacting with constellation data.
 
 ### GET /constellations
 
-Making a `GET` request to `/constellations` will return an array of objects, where each object is a constellation.
+Fetches an array of all constellation objects.
 
-**Example Request**
+**Example Request:**
 
-```
+```bash
 GET http://localhost:5001/constellations
 ```
 
-**Example Response**
+**Example Response:**
 
 ```json
 [
@@ -60,17 +90,15 @@ GET http://localhost:5001/constellations
 
 ### GET /constellations/:id
 
-Making a `GET` request to `/constellations/:id`, where `:id` is an ID of one of the constellations, will return a single object that represents the specified constellation.
+Fetches a specific constellation by its ID.
 
-If the constellation cannot be found by the ID, the server will return an error message of `404 Not found`.
+**Example Request:**
 
-**Example Request**
-
-```
+```bash
 GET http://localhost:5001/constellations/UEUrlfX
 ```
 
-**Example Response**
+**Example Response:**
 
 ```json
 {
@@ -84,13 +112,11 @@ GET http://localhost:5001/constellations/UEUrlfX
 
 ### POST /constellations
 
-Making a `POST` request to `/constellations`, and including a request body, will return a single object that represents the newly created constellation.
+Creates a new constellation record. The request body should include information about the constellation.
 
-There is no specific validation that is a part of the server, so you can create a record with any number of keys. Newly created records will automatically generate an ID.
+**Example Request:**
 
-**Example Request**
-
-```
+```bash
 POST http://localhost:5001/constellations
 {
   "name": "Camelopardalis",
@@ -100,7 +126,7 @@ POST http://localhost:5001/constellations
 }
 ```
 
-**Example Response**
+**Example Response:**
 
 ```json
 {
@@ -114,15 +140,11 @@ POST http://localhost:5001/constellations
 
 ### PUT /constellations/:id
 
-Making a `PUT` request to `/constellations/:id`, where `:id` is the ID of a constellation, and including a request body, will _replace_ the existing constellation with the information included in the request body.
+Updates an existing constellation by ID. Include the updated information in the request body.
 
-There is no specific validation that is a part of the server, so you can add whatever keys you want.
+**Example Request:**
 
-If the constellation cannot be found by the ID, the server will return an error message of `404 Not found`.
-
-**Example Request**
-
-```
+```bash
 PUT http://localhost:5001/constellations/IVU9de
 {
   "name": "Camelopardalis",
@@ -132,7 +154,7 @@ PUT http://localhost:5001/constellations/IVU9de
 }
 ```
 
-**Example Response**
+**Example Response:**
 
 ```json
 {
@@ -146,17 +168,15 @@ PUT http://localhost:5001/constellations/IVU9de
 
 ### DELETE /constellations/:id
 
-Making a `DELETE` request to `/constellations/:id`, where `:id` is the ID of a constellation, will remove the specified constellation from the collection. An empty object will be returned.
+Deletes a constellation by ID.
 
-If the constellation cannot be found by the ID, the server will return an error message of `404 Not found`.
+**Example Request:**
 
-**Example Request**
-
-```
+```bash
 DELETE http://localhost:5001/constellations/IVU9de
 ```
 
-**Example Response**
+**Example Response:**
 
 ```json
 {}
@@ -164,10 +184,15 @@ DELETE http://localhost:5001/constellations/IVU9de
 
 ## Tips
 
-Making requests to the server may modify the data! If you want to reset your data back to its previous state, you can run the following command in this repository's folder.
+- The data you modify during testing is stored in a `db.json` file. If you want to reset the data to its initial state, use the following command:
 
-```bash
-git checkout db.json
-```
+  ```bash
+  git checkout db.json
+  ```
 
-This will effectively "undo" changes made to the database.
+This will restore the data to its original state.
+
+## Troubleshooting
+
+- **Port Conflicts**: If you encounter a port conflict (another service is using port 5001), you can either stop the conflicting service or change the port number in the server settings.
+- **Node.js Version Issues**: Ensure that you are running Node.js version 12.x or higher.
